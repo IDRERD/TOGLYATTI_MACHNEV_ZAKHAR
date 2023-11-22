@@ -14,13 +14,14 @@ class Window(QMainWindow):
 
     def drawCircle(self):
         self.r = random.randint(10, 200)
+        self.color = QColor(random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
         self.repaint()
 
     def paintEvent(self, qp):
         if self.r:
             qp = QPainter()
             qp.begin(self)
-            qp.setPen(QColor(255, 255, 0))
+            qp.setPen(self.color)
             qp.drawEllipse(int(self.width() / 2 - self.r), int(self.height() / 2 - self.r / 2), self.r * 2, self.r * 2)
             qp.end()
 
