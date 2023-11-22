@@ -1,5 +1,6 @@
 import sys
 import random
+import sqlite3
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtGui import *
@@ -8,7 +9,7 @@ from PyQt5.QtGui import *
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        uic.loadUi('main.ui', self)
         self.pushButton.clicked.connect(self.drawCircle)
         self.r = None
 
